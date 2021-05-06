@@ -1034,9 +1034,17 @@ body .scroll-to-top.active {
 }
  /* Responsive */
  @media (max-width: 576px) {
+  .wrapper .header .header-menu .title {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .wrapper .header .header-menu .slidebar-btn {
+    margin-left: 0px !important;
+  }
   .wrapper .main-container {
-    width: 100% !important;
-    margin-left: auto !important;
+    width: calc(100% - 70px) !important;
+    margin-left: 70px !important;
   }
 }
+
 /*# sourceMappingURL=style.css.map */
