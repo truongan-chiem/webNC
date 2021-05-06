@@ -99,6 +99,11 @@
                                                 <a href="/announce/\{{this._id}}/edit"><button class="btn-edit-announces mt-1" title="edit"><i class="fa fa-wrench"></i></button></a>
                                             </div>
                                         \{{/xif}}
+                                        {{#xif user.role '==' 'admin' }}
+                                            <div class="list-select-announces">
+                                                <button data-iddel="\{{this._id}}" data-toggle="modal" data-target="#delAnnounce" class="btn-delete-announces" title="delete"><i class="fa fa-times-circle"></i></button>
+                                            </div>
+                                        {{/xif}}
                                         <p class="item-header">
                                             \{{this.title}}
                                         </p>

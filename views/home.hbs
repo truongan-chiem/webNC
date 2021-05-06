@@ -65,6 +65,13 @@
                                             <li><button data-idpost="\{{this._id}}" data-toggle="modal" data-target="#EditPost">Edit</button></li>
                                         </div>
                                    \{{/xif}}
+                                   {{!-- admin duoc xoa bai viet --}}
+                                   {{#xif user.role '==' 'admin'}}
+                                        <div class="list-select"><i data-pid="\{{this._id}}" class="fa fa-ellipsis-h"></i></div>
+                                        <div class="menu-select-btn shadow menu-select-1\{{this._id}}">
+                                            <li><button data-idpost="\{{this._id}}" data-toggle="modal" data-target="#confirmDelPost">Delete</button></li>
+                                        </div>
+                                   {{/xif}}
                                     <div class="user-post d-inline-flex justify-content-center align-content-center">
                                         <div class="post-user-img user-img">
                                             <img class="border-radius" src="/uploads/\{{this.InfoUser.image}}" alt="Image of User">
@@ -130,6 +137,7 @@
                                             </div>
                                             <div class="post-comment-contain w-75 flex-grow-1 pt-3 pt-md-0 mr-3">
                                                 <div class="form-group post-comment-content p-3 overflow-hidden mb-0">
+                                                    {{!-- Kiem tra la chu comment --}}
                                                 \{{#xif this.idUserCmt '==' ../../currentId}}
                                                     <div class="list-select-comment"><i data-cid="\{{this._id}}" class="fa fa-ellipsis-h"></i></div>
                                                     <div class="menu-select-comment-btn shadow menu-select-2\{{this._id}}">
@@ -137,6 +145,13 @@
                                                         <li><button data-idcmt="\{{this._id}}" data-toggle="modal" data-target="#EditCmt">Edit</button></li>
                                                     </div>
                                                 \{{/xif}}
+                                                {{!-- Kiem tra admin duoc xoa bai viet --}}
+                                                {{#xif user.role '==' 'admin'}}
+                                                    <div class="list-select-comment"><i data-cid="\{{this._id}}" class="fa fa-ellipsis-h"></i></div>
+                                                    <div class="menu-select-comment-btn shadow menu-select-2\{{this._id}}">
+                                                        <li><button data-idcmt="\{{this._id}}" data-toggle="modal" data-target="#confirmDelCmt">Delete</button></li>
+                                                    </div>
+                                                {{/xif}}
                                                     <div class="post-comment-author">
                                                         <a href="#" class="post-comment-author-name color-black">\{{this.nameUserCmt}}</a>
                                                         <span class="post-comment-author-time d-md-inline-block d-block mx-md-2">\{{this.createdCmt}}</span>
