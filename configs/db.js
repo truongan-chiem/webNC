@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb+srv://truongan:t2c3yTedUuxFAlFg@webnangcao.z5jnw.mongodb.net/projectweb?retryWrites=true&w=majority'
+// const MONGODB_URI = 'mongodb+srv://truongan:t2c3yTedUuxFAlFg@webnangcao.z5jnw.mongodb.net/projectweb?retryWrites=true&w=majority'
+
 async function connect() {
   try {
-    await mongoose.connect(MONGODB_URI ||'mongodb://localhost:127.0.0.1/projectWeb', {
+    await mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:127.0.0.1/projectWeb', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
