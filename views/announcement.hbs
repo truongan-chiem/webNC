@@ -91,6 +91,7 @@
 
                             {{!-- display announce --}}
                             <script type="text/x-handlebars-template" id="greeting-template-announce">
+                                \{{#if data}}
                                     \{{#each data}}
                                     <li class="item p-3 mb-3">
                                         \{{#xif this.idUserCreateAnnounce '==' ../currentId }}
@@ -108,7 +109,7 @@
                                             \{{this.title}}
                                         </p>
                                         <p class="item-content my-2">
-                                           \{{this.content}} 
+                                        \{{this.content}} 
                                         </p>
                                         <p class="item-footer d-flex justify-content-between">
                                             <a href="/announce/\{{_id}}/detail">Chi tiết thống báo</a>
@@ -118,6 +119,11 @@
                                         </p>
                                     </li>
                                     \{{/each}}
+                                \{{else}}
+                                        <div class="bg-dark rounded p-2">
+                                            <h3 class="text-center text-warning">Chưa có thông báo nào hoặc đã hết thông báo!!!</h3>
+                                        </div>
+                                \{{/if}}
                                 </script>
 
                             <div class="content-box-all-announces mt-3" id="html_display_announce">

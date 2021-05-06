@@ -399,7 +399,7 @@ $(document).ready(function(){
     function changeAnnounce(){
         $('#inputGroupSelectDonVi').change(()=>{
             select = $('#inputGroupSelectDonVi').val();
-            getAnnounce(next,select)
+            getAnnounce(0,select)
         })
     }
     changeAnnounce()
