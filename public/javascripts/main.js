@@ -152,6 +152,7 @@ $(document).ready(function(){
             var cmt = $('#'+idPost).val();
             if(cmt==''){
                 alert('Vui lòng nhập nội dung muốn bình luận!!!')
+                $('#'+idPost).focus();
             }
             else{
                 $.ajax({
