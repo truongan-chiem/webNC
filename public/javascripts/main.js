@@ -32,7 +32,21 @@ ImageContainModal.forEach(function(el, idx){
     });    
 });
 
-
+//change input file
+$("#inputImgPost").change(function () {
+    var fileSelected = document.getElementById('inputImgPost').files;
+    if(fileSelected.length>0){
+        var filetoLoad = fileSelected[0];
+        var fileReader = new FileReader();
+        fileReader.onload = (fileloadEvent)=>{
+            var srcData = fileloadEvent.target.result;
+            var newImg = document.createElement('img');
+            newImg.src = srcData;
+            document.getElementById('displayImageOnLoad').innerHTML = newImg.outerHTML;
+        }
+        fileReader.readAsDataURL(filetoLoad)
+    }
+});
 // Scroll Top
 window.addEventListener("scroll", () => {
     if(window.pageYOffset > 0){

@@ -76,6 +76,10 @@ body {
 .pointer{
   cursor: pointer;
 }
+#displayImageOnLoad img{
+  width: 300px;
+  margin: 5px 10px;
+}
  /* //Ket thuc */
 body .wrapper .header {
   z-index: 10;
