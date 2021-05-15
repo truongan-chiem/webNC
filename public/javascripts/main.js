@@ -65,6 +65,7 @@ scrollTop.addEventListener("click", () => {
 
 $(document).ready(function(){
     var skip = 0;
+    let action ='append'
     show(skip);
     $("#btn_send").click(()=>{
     
@@ -85,7 +86,12 @@ $(document).ready(function(){
                 contentType: false,
                 processData: false,
                 success:(res)=>{
-                    $("#noidungbaiviet").val('');
+                    
+                    $("#formbaiviet").trigger('reset');
+                    action='html';
+                    skip =0;
+                    show(skip);
+                    $('#displayImageOnLoad').empty()
                 },
                 error:(e)=>{
                     alert("Error!")
@@ -122,7 +128,12 @@ $(document).ready(function(){
                 });
             var html_content = template(result);
             
-            $('#html_display').append(html_content); 
+            if(action=='append'){
+                $('#html_display').append(html_content); 
+            }
+            else{
+                $('#html_display').html(html_content); 
+            }
 
             },
             error:(e)=>{
@@ -327,6 +338,7 @@ $(document).ready(function(){
         $(window).scroll(function(){
             if($(window).scrollTop()>=$(document).height()-$(window).height()-100){
                 skip =skip+10;
+                action='append'
                 show(skip)
             }
         })
