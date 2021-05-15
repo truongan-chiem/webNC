@@ -80,6 +80,12 @@ body {
   width: 300px;
   margin: 5px 10px;
 }
+.clickPrePage{
+  cursor: pointer;
+}
+.clickNextPage{
+  cursor: pointer;
+}
  /* //Ket thuc */
 body .wrapper .header {
   z-index: 10;
