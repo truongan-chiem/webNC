@@ -3,7 +3,7 @@ const Post = require('../models/posts')
 const Comment = require('../models/comments')
 const Announce = require('../models/announce')
 const mongoose = require('mongoose');
-const {mongooseToObject,mutipleMongooseToObject} = require('../../middleware/mongoose')
+const {mongooseToObject} = require('../../middleware/mongoose')
 class siteController{
     //[GET] /
     home(req,res){
